@@ -17,11 +17,11 @@ export const userSlice = createSlice({
     },
   },
   selectors: {
-    isLoggedIn: (state) => !!state.email,
+    getIsLoggedIn: (state) => !!state.email,
   },
 })
 
 export const { setUserState, removeUserState } = userSlice.actions
-export const { isLoggedIn } = userSlice.selectors
+export const { getIsLoggedIn } = userSlice.selectors
 
 export default userSlice.reducer

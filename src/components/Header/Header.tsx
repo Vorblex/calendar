@@ -1,21 +1,22 @@
 import { AppBar, Button, Toolbar, Typography } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import { isLoggedIn, setUserState } from '@/store/user/userSlice'
+import { getIsLoggedIn, removeUserState } from '@/store/user/userSlice'
 
 function Header() {
-  const loggedIn = useAppSelector(isLoggedIn)
+  const isLoggedIn = useAppSelector(getIsLoggedIn)
   const dispatch = useAppDispatch()
+  const userName = useAppSelector((state) => state.user.name)
 
   const logOut = () => {
-    if (loggedIn) {
-      return dispatch(setUserState({ email: '', name: '' }))
+    if (isLoggedIn) {
+      return dispatch(removeUserState())
     }
   }
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-          Calendar
+          Hello {userName}
         </Typography>
         <Button onClick={logOut} variant="contained" color="info">
           Log Out

@@ -1,7 +1,7 @@
 import { TDay } from '@/types'
 import { Grid, Paper } from '@mui/material'
 
-export default function Day({ day }: TDay) {
+function Day({ day }: TDay) {
   return (
     <Grid item sx={{ display: 'flex' }}>
       <Paper
@@ -17,3 +17,5 @@ export default function Day({ day }: TDay) {
     </Grid>
   )
 }
+
+export default Day

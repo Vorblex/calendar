@@ -1,12 +1,12 @@
 import { RouterProvider } from 'react-router-dom'
 import { useAppSelector } from '@/store/hooks'
 import createRouter from '@/router'
-import { isLoggedIn } from '@/store/user/userSlice'
+import { getIsLoggedIn } from '@/store/user/userSlice'
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 
 function App() {
-  const loggedIn = useAppSelector(isLoggedIn)
-  const router = createRouter(loggedIn)
+  const isLoggedIn = useAppSelector(getIsLoggedIn)
+  const router = createRouter(isLoggedIn)
 
   const defaultTheme = createTheme()
 

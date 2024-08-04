@@ -1,12 +1,14 @@
+import storage from 'redux-persist/lib/storage'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import userSlice from '@/store/user/userSlice'
 import accountsSlice from '@/store/accounts/accountsSlice'
-import storage from 'redux-persist/lib/storage'
-import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
+import calendarSlice from '@/store/calendar/calendarSlice'
 
 const rootReducer = combineReducers({
   user: userSlice,
   accounts: accountsSlice,
+  calendar: calendarSlice,
 })
 
 const persistConfig = { key: 'root', storage, version: 1 }
