@@ -13,7 +13,7 @@ function MainPage() {
     <>
       <SubHeader />
       <Box component="main" sx={{ flexGrow: 1, display: 'flex' }}>
-        <Container sx={{ mb: 4, flexGrow: 1, display: 'grid' }} maxWidth={false}>
+        <Container sx={{ mb: 4, flexGrow: 1, display: 'grid' }} maxWidth="xl">
           <Grid
             sx={{
               display: 'grid',
@@ -24,7 +24,7 @@ function MainPage() {
             {month.map((row, weekIndex) => (
               <Fragment key={weekIndex}>
                 {row.map((day, dayIndex) => (
-                  <Day day={day} key={dayIndex} />
+                  <Day day={day} weekIndex={weekIndex} key={dayIndex} />
                 ))}
               </Fragment>
             ))}
