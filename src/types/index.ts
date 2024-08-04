@@ -1,8 +1,6 @@
 import dayjs from 'dayjs'
 
-export type TDay = {
-  day: dayjs.Dayjs
-}
+export type TDay = dayjs.Dayjs
 
 export type TUser = {
   email?: string

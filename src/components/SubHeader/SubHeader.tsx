@@ -1,18 +1,20 @@
 import dayjs from 'dayjs'
 import { Box, Button, Container, Typography } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import { getMonthIndex, setMonthIndex } from '@/store/calendar/calendarSlice'
+import { getMonthIndex, setDaySelected, setMonthIndex } from '@/store/calendar/calendarSlice'
 
 function SubHeader() {
   const monthIndex = useAppSelector(getMonthIndex)
   const dispatch = useAppDispatch()
 
   const handleToday = () => {
-    dispatch(setMonthIndex(dayjs().month()))
+    const Now = dayjs()
+    dispatch(setMonthIndex(Now.month()))
+    dispatch(setDaySelected(dayjs(new Date(Now.year(), Now.month(), Now.date())).toString()))
   }
 
   return (
-    <Container maxWidth={false}>
+    <Container maxWidth={'xl'}>
       <Box
         sx={{
           display: 'flex',

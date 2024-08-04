@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
 import Header from '@/components/Header/Header'
-import SubHeader from '@/components/SubHeader/SubHeader'
 
 function MainLayout() {
   return (
