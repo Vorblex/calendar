@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import date from '@/utills/date'
 import { Box, Button, Container, Typography } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { getMonthIndex, setDaySelected, setMonthIndex } from '@/store/calendar/calendarSlice'
@@ -8,9 +9,8 @@ function SubHeader() {
   const dispatch = useAppDispatch()
 
   const handleToday = () => {
-    const Now = dayjs()
-    dispatch(setMonthIndex(Now.month()))
-    dispatch(setDaySelected(dayjs(new Date(Now.year(), Now.month(), Now.date())).toString()))
+    dispatch(setMonthIndex(date.currentMonth()))
+    dispatch(setDaySelected(date.currentDay()))
   }
 
   return (
