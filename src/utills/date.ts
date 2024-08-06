@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-const getMonth = (month = dayjs().month()) => {
+export const getMonthData = (month = dayjs().month()) => {
   month = Math.floor(month)
   const year = dayjs().year()
   const firstDayOfTheMonth = dayjs(new Date(year, month, 1)).day()
@@ -14,4 +14,10 @@ const getMonth = (month = dayjs().month()) => {
   return daysByWeeks
 }
 
-export default getMonth
+const date = {
+  now: () => dayjs(),
+  currentMonth: () => dayjs().month(),
+  currentDay: () => dayjs(new Date(dayjs().year(), dayjs().month(), dayjs().date())).valueOf(),
+}
+
+export default date

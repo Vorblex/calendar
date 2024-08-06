@@ -11,6 +11,7 @@ function MainLayout() {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        minWidth: 768,
         overflow: 'auto',
       }}>
       <Header />
