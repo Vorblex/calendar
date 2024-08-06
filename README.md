@@ -10,6 +10,8 @@ To install the dependencies, run:
 
 > npm install
 
+##### Application will be served on http://localhost:3000
+
 ## Scripts
 
 - **dev**
